@@ -1,6 +1,6 @@
-import challengesImage from 'images/Challenges.png'
-import pssImage from 'images/Publication-Storage-System.png'
-import trainStationImage from 'images/Train-Station.png'
+import challengesImage from './images/Challenges.png'
+import pssImage from './images/Publication-Storage-System.png'
+import trainStationImage from './images/Train-Station.png'
 
 export const projects = [
 	{

@@ -1,5 +1,5 @@
 import { List } from '@chakra-ui/react'
-import { projects } from 'constants/projects'
+import { projects } from 'views/projects/projects'
 import ProjectItem from './ProjectItem'
 
 export default function ProjectList() {
