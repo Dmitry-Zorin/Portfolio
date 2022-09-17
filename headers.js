@@ -2,8 +2,9 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 const csp = [
 	"default-src 'self' vitals.vercel-insights.com",
-	"style-src 'self' 'unsafe-inline'",
 	"script-src 'self' 'unsafe-eval' 'unsafe-inline'",
+	"style-src 'self' 'unsafe-inline'",
+	"img-src 'self' data:",
 ]
 
 async function headers() {
