@@ -1,24 +1,36 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "18.6.3",
-    "@types/react": "18.0.15",
-    "@types/react-dom": "18.0.6",
-    "eslint": "8.21.0",
-    "eslint-config-next": "12.2.3",
-    "typescript": "4.7.4"
-  }
+	"name": "portfolio",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"tsc": "tsc",
+		"update-packages": "npm i -g npm-check-updates && ncu -u && npm i"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.3.2",
+		"@emotion/react": "^11.10.4",
+		"@emotion/styled": "^11.10.4",
+		"@fortawesome/fontawesome-svg-core": "^6.2.0",
+		"@fortawesome/free-solid-svg-icons": "^6.2.0",
+		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@types/lodash": "^4.14.185",
+		"framer-motion": "^7.3.5",
+		"lodash": "^4.17.21",
+		"next": "12.3.0",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "18.7.18",
+		"@types/react": "18.0.20",
+		"@types/react-dom": "18.0.6",
+		"eslint": "8.23.1",
+		"eslint-config-next": "12.3.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"prettier": "^2.7.1",
+		"typescript": "4.8.3"
+	}
 }
