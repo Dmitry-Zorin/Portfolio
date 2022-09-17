@@ -6,6 +6,10 @@ const csp = [
 	"script-src 'self' 'unsafe-eval' 'unsafe-inline'",
 ]
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+})
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
@@ -39,13 +43,6 @@ const nextConfig = {
 			},
 		]
 	},
-	experimental: {
-		modularizeImports: {
-			lodash: {
-				transform: 'lodash/{{member}}',
-			},
-		},
-	},
 }
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(nextConfig)
