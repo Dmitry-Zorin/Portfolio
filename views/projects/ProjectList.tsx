@@ -8,8 +8,8 @@ export default function ProjectList() {
 			{projects.map((item, i) => (
 				<ProjectItem
 					key={item.title}
-					first={!i}
-					last={i === projects.length - 1}
+					index={i}
+					length={projects.length}
 					{...item}
 				/>
 			))}

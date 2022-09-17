@@ -40,6 +40,7 @@ export default function ProjectImage({
 						src={src}
 						layout="responsive"
 						quality={100}
+						priority
 						{...props}
 					/>
 				</motion.div>

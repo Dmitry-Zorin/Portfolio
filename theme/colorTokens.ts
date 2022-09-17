@@ -1,6 +1,6 @@
 const colorTokens = {
 	primary: {
-		default: `hsl(150 45% 45%)`,
+		default: `hsl(150 50% 35%)`,
 	},
 	text: {
 		default: 'hsl(215 22% 26%)',

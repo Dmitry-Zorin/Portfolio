@@ -20,8 +20,8 @@ export interface ProjectItemProps {
 	description: string
 	year: number
 	tags: string[]
-	first?: boolean
-	last?: boolean
+	index: number
+	length: number
 }
 
 export default function ProjectItem({
@@ -31,8 +31,8 @@ export default function ProjectItem({
 	description,
 	year,
 	tags,
-	first,
-	last,
+	index,
+	length,
 }: ProjectItemProps) {
 	function Heading(props: StackProps) {
 		return (
@@ -50,7 +50,7 @@ export default function ProjectItem({
 		<Stack as={ListItem} spacing={8}>
 			<SimpleGrid as="article" columns={{ base: 1, lg: 2 }} spacing={8}>
 				<Heading display={{ lg: 'none' }} />
-				<ProjectImage href={href} src={src} title={title} priority={first} />
+				<ProjectImage href={href} src={src} title={title} />
 				<Stack spacing={4}>
 					<Heading display={{ base: 'none', lg: 'block' }} />
 					<Text>{description}</Text>
@@ -63,7 +63,7 @@ export default function ProjectItem({
 					</Wrap>
 				</Stack>
 			</SimpleGrid>
-			{!last && <Divider />}
+			{index < length - 1 && <Divider />}
 		</Stack>
 	)
 }
