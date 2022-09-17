@@ -1,6 +1,6 @@
 import { Container, Heading, HStack } from '@chakra-ui/react'
 import Head from 'components/Head'
-import ProjectList from 'pages/_components/projects/ProjectList'
+import ProjectList from 'views/projects/ProjectList'
 
 export default function ProjectsPage() {
 	return (
