@@ -1,16 +1,23 @@
 import { Box } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Image, { ImageProps } from 'next/image'
 import Link from 'next/link'
 import { ProjectItemProps } from './ProjectItem'
 
-type ProjectImageProps = Pick<ProjectItemProps, 'href' | 'title' | 'src'>
+type ProjectImageProps = ImageProps &
+	Pick<ProjectItemProps, 'href' | 'title' | 'src'>
 
-export default function ProjectImage({ href, title, src }: ProjectImageProps) {
+export default function ProjectImage({
+	href,
+	title,
+	src,
+	...props
+}: ProjectImageProps) {
 	return (
 		<Link href={href} passHref>
 			<Box
 				as="a"
+				aria-label={title}
 				role="group"
 				target="_blank"
 				borderRadius="lg"
@@ -33,7 +40,7 @@ export default function ProjectImage({ href, title, src }: ProjectImageProps) {
 						src={src}
 						layout="responsive"
 						quality={100}
-						priority
+						{...props}
 					/>
 				</motion.div>
 			</Box>

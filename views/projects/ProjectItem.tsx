@@ -20,6 +20,7 @@ export interface ProjectItemProps {
 	description: string
 	year: number
 	tags: string[]
+	first?: boolean
 	last?: boolean
 }
 
@@ -30,6 +31,7 @@ export default function ProjectItem({
 	description,
 	year,
 	tags,
+	first,
 	last,
 }: ProjectItemProps) {
 	function Heading(props: StackProps) {
@@ -48,7 +50,7 @@ export default function ProjectItem({
 		<Stack as={ListItem} spacing={8}>
 			<SimpleGrid as="article" columns={{ base: 1, lg: 2 }} spacing={8}>
 				<Heading display={{ lg: 'none' }} />
-				<ProjectImage href={href} src={src} title={title} />
+				<ProjectImage href={href} src={src} title={title} priority={first} />
 				<Stack spacing={4}>
 					<Heading display={{ base: 'none', lg: 'block' }} />
 					<Text>{description}</Text>
