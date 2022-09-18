@@ -1,14 +1,13 @@
 import { Box, Heading, Stack, StackProps } from '@chakra-ui/react'
 import Link from 'next/link'
-import { ProjectItemProps } from './ProjectItem'
+import { Project } from 'pages/projects'
 
-export type ProjectHeadingProps = StackProps &
-	Pick<ProjectItemProps, 'year' | 'href' | 'title'>
+interface ProjectHeadingProps extends StackProps {
+	project: Project
+}
 
 export default function ProjectHeading({
-	year,
-	href,
-	title,
+	project,
 	...props
 }: ProjectHeadingProps) {
 	return (
@@ -19,20 +18,22 @@ export default function ProjectHeading({
 				fontWeight="semibold"
 				lineHeight="none"
 			>
-				{year}
+				{project.year}
 			</Box>
-			<Link href={href} passHref>
+			<Link href={project.href} passHref>
 				<Heading
 					as="a"
 					target="_blank"
 					flexGrow={1}
-					_hover={{
-						textDecoration: 'underline',
-						textDecorationColor: 'primary',
-						textUnderlineOffset: '0.5rem',
-					}}
+					textDecoration="underline"
+					textUnderlineOffset="0.5rem"
+					textDecorationColor="transparent"
+					_hover={{ textDecorationColor: 'primary' }}
+					transitionProperty="text-decoration-color"
+					transitionDuration="fast"
+					transitionTimingFunction="ease-in-out"
 				>
-					{title}
+					{project.title}
 				</Heading>
 			</Link>
 		</Stack>

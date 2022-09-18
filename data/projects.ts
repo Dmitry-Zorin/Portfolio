@@ -1,18 +1,16 @@
-import challengesImage from './images/Challenges.png'
-import pssImage from './images/Publication-Storage-System.png'
-import trainStationImage from './images/Train-Station.png'
-
 export const projects = [
 	{
-		href: 'https://publication-storage-system.vercel.app/ru',
-		src: pssImage,
 		title: 'Система хранения публикаций',
+		href: 'https://publication-storage-system.vercel.app/ru',
 		description:
 			'Проект в стиле электронной библиотеки, основанный на проекте, который был мной разработан в Технополисе "ЭРА".',
 		year: 2022,
+		imageProps: {
+			src: '/images/Publication-Storage-System.png',
+		},
 		tags: [
-			'React',
 			'TypeScript',
+			'React',
 			'Next',
 			'React-Query',
 			'Prisma',
@@ -21,23 +19,26 @@ export const projects = [
 		],
 	},
 	{
-		href: 'https://train-station.vercel.app',
-		src: trainStationImage,
 		title: 'Железнодорожная станция',
+		href: 'https://train-station.vercel.app',
 		description:
 			'Мини-проект, состоящий из одной страницы, выполненный в рамках хакатона "Цифровой прорыв".',
 		year: 2021,
-		tags: ['React', 'JavaScript', 'Material-UI', 'Framer Motion'],
+		imageProps: {
+			src: '/images/Train-Station.png',
+		},
+		tags: ['React', 'Material-UI', 'Framer Motion'],
 	},
 	{
-		href: 'https://create-challenges.vercel.app',
-		src: challengesImage,
 		title: 'Челленджи',
+		href: 'https://create-challenges.vercel.app',
 		description: 'Один из моих первых личных проектов с использованием React.',
 		year: 2020,
+		imageProps: {
+			src: '/images/Challenges.png',
+		},
 		tags: [
 			'React',
-			'JavaScript',
 			'Express',
 			'Node',
 			'GraphQL',

@@ -3,6 +3,6 @@
 	font-style: normal;
 	font-weight: 400 900;
 	font-display: swap;
-	src: url('./Golos-Text.woff2') format('woff2'),
-		url('./Golos-Text.woff') format('woff');
+	src: url('/fonts/Golos-Text.woff2') format('woff2'),
+		url('/fonts/Golos-Text.woff') format('woff');
 }
