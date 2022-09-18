@@ -11,8 +11,8 @@ const theme = extendTheme({
 		heading: `Golos Text, ${systemFonts}`,
 	},
 	fontSizes: {
-		'sm-': '0.8125rem',
-		'md-': '0.9375rem',
+		md: '1.0625rem',
+		lg: '1.1875rem',
 	},
 	letterSpacings: {
 		tighter: '-0.04rem',

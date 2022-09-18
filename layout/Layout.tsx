@@ -11,7 +11,7 @@ export default function Layout({ children, ...props }: ContainerProps) {
 			<header>
 				{router.route === '/' ? (
 					<SimpleGrid columns={{ base: 2, md: 4 }} py={8}>
-						<PageHeading link page="projects" text="Проекты" />
+						<PageHeading page="projects" text="Проекты" link />
 					</SimpleGrid>
 				) : (
 					<AppBar />

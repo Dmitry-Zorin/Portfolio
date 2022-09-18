@@ -1,24 +1,24 @@
 const colorTokens = {
 	primary: {
-		default: `hsl(150 50% 35%)`,
+		default: `hsl(170 100% 25%)`,
 	},
 	text: {
-		default: 'hsl(215 22% 26%)',
+		default: 'hsl(210 25% 30%)',
 	},
 	'text-secondary': {
-		default: 'hsl(215 15% 40%)',
+		default: 'hsl(210 15% 40%)',
 	},
 	bg: {
-		default: 'hsl(215 0% 100%)',
+		default: 'hsl(0 0% 96%)',
 	},
 	'bg-layer-1': {
-		default: 'hsl(215 25% 97%)',
+		default: 'hsl(210 10% 93%)',
 	},
 	'bg-layer-2': {
-		default: 'hsl(215 25% 94%)',
+		default: 'hsl(210 10% 90%)',
 	},
 	border: {
-		default: 'hsl(215 25% 88%)',
+		default: 'hsl(210 10% 80%)',
 	},
 }
 

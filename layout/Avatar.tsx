@@ -11,23 +11,32 @@ type AvatarProps = BoxProps &
 
 export default function Avatar({ large, ...props }: AvatarProps) {
 	const imageProps = large
-		? { border: '6px solid', boxSize: 64 }
-		: { border: '3px solid', boxSize: 16 }
+		? {
+				boxSize: 64,
+				border: '6px solid',
+				shadow: 'dark-lg',
+		  }
+		: {
+				boxSize: 16,
+				border: '2px solid',
+		  }
 
 	return (
 		<motion.div
 			layoutId="avatar"
-			style={{ zIndex: 1, aspectRatio: '1' }}
+			style={{ zIndex: 1 }}
 			transition={slowerSpringConfig}
 		>
 			<Box
 				as={Image}
 				alt="Аватар"
 				src={avatarImg}
+				loading="eager"
 				placeholder="blur"
+				quality={100}
 				{...imageProps}
-				borderRadius="full"
 				borderColor="primary"
+				borderRadius="full"
 				sx={{ height: 'auto' }}
 				{...props}
 			/>

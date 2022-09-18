@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, useBreakpointValue } from '@chakra-ui/react'
 import { Project } from 'data/projects'
 import { motion } from 'framer-motion'
 import Image, { ImageProps } from 'next/future/image'
@@ -10,21 +10,21 @@ interface ProjectImageProps extends Partial<ImageProps> {
 }
 
 export default function ProjectImage({ project, ...props }: ProjectImageProps) {
+	const quality = useBreakpointValue({ base: 75, md: 100, lg: 75 })
+
 	return (
 		<Link href={project.href} passHref>
 			<Box
 				as={motion.a}
 				aria-label={project.title}
 				target="_blank"
-				borderRadius="lg"
-				border="1px"
-				borderColor="border"
+				borderRadius="xl"
 				overflow="hidden"
 				shadow="md"
-				_hover={{ shadow: 'xl' }}
 				transitionProperty="box-shadow"
 				transitionDuration="normal"
 				transitionTimingFunction="ease"
+				_hover={{ shadow: 'xl' }}
 				whileHover={{
 					scale: 1.025,
 					transition: gentleSpringConfig,
@@ -34,7 +34,7 @@ export default function ProjectImage({ project, ...props }: ProjectImageProps) {
 					alt={project.title}
 					src={project.src}
 					placeholder="blur"
-					quality={100}
+					quality={quality}
 					{...props}
 				/>
 			</Box>
