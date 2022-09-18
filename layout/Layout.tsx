@@ -7,7 +7,7 @@ export default function Layout({ children, ...props }: ContainerProps) {
 	const router = useRouter()
 
 	return (
-		<Container as="main" maxW="8xl" px={{ base: 4, md: 8 }} pb={16} {...props}>
+		<Container as="main" maxW="8xl" px={{ base: 4, md: 8 }} pb={20} {...props}>
 			<header>
 				{router.route === '/' ? (
 					<SimpleGrid columns={{ base: 2, md: 4 }} py={8}>

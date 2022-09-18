@@ -1,7 +1,6 @@
 import {
 	Badge,
 	Divider,
-	Flex,
 	SimpleGrid,
 	Stack,
 	Text,
@@ -39,26 +38,27 @@ export default function ProjectItem({
 				},
 			}}
 		>
-			<Stack spacing={12}>
+			<Stack spacing={10}>
 				<SimpleGrid as="article" columns={{ base: 1, lg: 2 }} spacing={8}>
-					<ProjectHeading display={{ lg: 'none' }} project={project} />
-					<Flex>
-						<ProjectImage project={project} />
-					</Flex>
-					<Stack spacing={4}>
+					<ProjectHeading project={project} display={{ lg: 'none' }} />
+					<ProjectImage project={project} />
+					<div>
 						<ProjectHeading
-							display={{ base: 'none', lg: 'block' }}
 							project={project}
+							display={{ base: 'none', lg: 'block' }}
+							pb={4}
 						/>
-						<Text>{project.description}</Text>
-						<Wrap pt={2}>
-							{project.tags.map((tag) => (
-								<WrapItem key={tag}>
-									<Badge>{tag}</Badge>
-								</WrapItem>
-							))}
-						</Wrap>
-					</Stack>
+						<Stack spacing={4}>
+							<Text>{project.description}</Text>
+							<Wrap pt={2}>
+								{project.tags.map((tag) => (
+									<WrapItem key={tag}>
+										<Badge>{tag}</Badge>
+									</WrapItem>
+								))}
+							</Wrap>
+						</Stack>
+					</div>
 				</SimpleGrid>
 				{index < length - 1 && <Divider />}
 			</Stack>

@@ -30,7 +30,7 @@ export default function PageHeading({ link, page, text }: PageHeadingProps) {
 			</Heading>
 		</Link>
 	) : (
-		<Heading as="h1" fontSize="6xl" pt={4} pb={8}>
+		<Heading as="h1" fontSize="6xl" pt={6} pb={12}>
 			{motionText}
 		</Heading>
 	)

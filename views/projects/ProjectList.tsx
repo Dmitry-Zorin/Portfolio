@@ -16,7 +16,7 @@ export default function ProjectList() {
 					},
 				},
 			}}
-			spacing={12}
+			spacing={10}
 		>
 			{projects.map((project, i) => (
 				<ProjectItem
