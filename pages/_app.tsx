@@ -1,14 +1,16 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import Layout from 'components/Layout'
+import 'assets/styles/Golos-Text.css'
+import useScrollRestoration from 'hooks/useScrollRestoration'
+import Layout from 'layout/Layout'
 import type { AppProps } from 'next/app'
 import theme from 'theme'
-import '../public/fonts/Golos-Text/Golos-Text.css'
 
 config.autoAddCss = false
 
 function MyApp({ Component, pageProps }: AppProps) {
+	useScrollRestoration()
 	return (
 		<ChakraProvider theme={theme}>
 			<Layout>

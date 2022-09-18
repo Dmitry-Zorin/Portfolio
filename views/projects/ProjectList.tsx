@@ -1,16 +1,33 @@
 import { List } from '@chakra-ui/react'
-import { projects } from 'views/projects/projects'
+import { motion } from 'framer-motion'
+import { Projects } from 'pages/projects'
 import ProjectItem from './ProjectItem'
 
-export default function ProjectList() {
+interface ProjectListProps {
+	projects: Projects
+}
+
+export default function ProjectList({ projects }: ProjectListProps) {
 	return (
-		<List spacing={8}>
-			{projects.map((item, i) => (
+		<List
+			as={motion.ul}
+			initial="initial"
+			animate="animate"
+			variants={{
+				animate: {
+					transition: {
+						staggerChildren: 0.25,
+					},
+				},
+			}}
+			spacing={8}
+		>
+			{projects.map((project, i) => (
 				<ProjectItem
-					key={item.title}
-					index={i}
+					key={project.title}
+					project={project}
 					length={projects.length}
-					{...item}
+					index={i}
 				/>
 			))}
 		</List>

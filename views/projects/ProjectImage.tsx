@@ -1,49 +1,36 @@
 import { Box } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import Image, { ImageProps } from 'next/image'
+import Image, { ImageProps } from 'next/future/image'
 import Link from 'next/link'
-import { ProjectItemProps } from './ProjectItem'
+import { Project } from 'pages/projects'
+import { gentleSpringConfig } from 'utils/animation'
 
-type ProjectImageProps = ImageProps &
-	Pick<ProjectItemProps, 'href' | 'title' | 'src'>
+interface ProjectImageProps extends Partial<ImageProps> {
+	project: Project
+}
 
-export default function ProjectImage({
-	href,
-	title,
-	src,
-	...props
-}: ProjectImageProps) {
+export default function ProjectImage({ project, ...props }: ProjectImageProps) {
 	return (
-		<Link href={href} passHref>
+		<Link href={project.href} passHref>
 			<Box
-				as="a"
-				aria-label={title}
-				role="group"
+				as={motion.a}
+				aria-label={project.title}
 				target="_blank"
 				borderRadius="lg"
 				border="1px"
 				borderColor="border"
 				overflow="hidden"
 				shadow="md"
-				_hover={{ shadow: 'lg' }}
+				_hover={{ shadow: 'xl' }}
+				transitionProperty="box-shadow"
+				transitionDuration="normal"
+				transitionTimingFunction="ease"
+				whileHover={{
+					scale: 1.05,
+					transition: gentleSpringConfig,
+				}}
 			>
-				<motion.div
-					whileHover={{ scale: 1.05 }}
-					transition={{
-						type: 'spring',
-						stiffness: 120,
-						damping: 14,
-					}}
-				>
-					<Image
-						alt={title}
-						src={src}
-						layout="responsive"
-						quality={100}
-						priority
-						{...props}
-					/>
-				</motion.div>
+				<Image alt={project.title} {...project.imageProps} {...props} />
 			</Box>
 		</Link>
 	)
