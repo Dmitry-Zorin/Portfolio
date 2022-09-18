@@ -1,4 +1,5 @@
 import { Box, Heading, HStack, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import avatarImg from 'assets/images/Avatar.jpeg'
 import Head from 'components/Head'
 import Link from 'components/Link'
 import { motion } from 'framer-motion'
@@ -42,7 +43,7 @@ export default function HomePage() {
 					borderColor="primary"
 					sx={{ aspectRatio: '1' }}
 				>
-					<Image alt="Аватар" src="/images/Avatar.jpeg" />
+					<Image alt="Аватар" src={avatarImg} placeholder="blur" />
 				</Box>
 				<Stack spacing={4}>
 					<Heading>Зорин Дмитрий Олегович</Heading>

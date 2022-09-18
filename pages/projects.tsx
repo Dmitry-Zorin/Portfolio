@@ -1,40 +1,10 @@
 import { Heading } from '@chakra-ui/react'
 import Head from 'components/Head'
 import Link from 'components/Link'
-import { projects } from 'data/projects'
 import { motion } from 'framer-motion'
-import { InferGetStaticPropsType } from 'next'
-import { getPlaiceholder } from 'plaiceholder'
 import ProjectList from 'views/projects/ProjectList'
 
-export async function getStaticProps() {
-	return {
-		props: {
-			projects: await Promise.all(
-				projects.map(async (project) => {
-					const { base64, img } = await getPlaiceholder(project.imageProps.src)
-					return {
-						...project,
-						imageProps: {
-							...img,
-							placeholder: 'blur' as const,
-							blurDataURL: base64,
-							quality: 90,
-						},
-					}
-				}),
-			),
-		},
-	}
-}
-
-type StaticProps = InferGetStaticPropsType<typeof getStaticProps>
-
-export type Projects = StaticProps['projects']
-
-export type Project = StaticProps['projects'][number]
-
-export default function ProjectsPage({ projects }: StaticProps) {
+export default function ProjectsPage() {
 	return (
 		<>
 			<Head title="Проекты" desc="Проекты Дмитрия Зорина" />
@@ -53,7 +23,7 @@ export default function ProjectsPage({ projects }: StaticProps) {
 					Проекты
 				</Heading>
 			</div>
-			<ProjectList projects={projects} />
+			<ProjectList />
 		</>
 	)
 }

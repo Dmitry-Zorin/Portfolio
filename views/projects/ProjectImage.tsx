@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react'
+import { Project } from 'data/projects'
 import { motion } from 'framer-motion'
 import Image, { ImageProps } from 'next/future/image'
 import Link from 'next/link'
-import { Project } from 'pages/projects'
 import { gentleSpringConfig } from 'utils/animation'
 
 interface ProjectImageProps extends Partial<ImageProps> {
@@ -26,11 +26,17 @@ export default function ProjectImage({ project, ...props }: ProjectImageProps) {
 				transitionDuration="normal"
 				transitionTimingFunction="ease"
 				whileHover={{
-					scale: 1.05,
+					scale: 1.0375,
 					transition: gentleSpringConfig,
 				}}
 			>
-				<Image alt={project.title} {...project.imageProps} {...props} />
+				<Image
+					alt={project.title}
+					src={project.src}
+					placeholder="blur"
+					quality={100}
+					{...props}
+				/>
 			</Box>
 		</Link>
 	)

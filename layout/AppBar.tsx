@@ -4,6 +4,7 @@ import {
 	faEnvelope,
 	faPhone,
 } from '@fortawesome/free-solid-svg-icons'
+import avatarImg from 'assets/images/Avatar.jpeg'
 import { motion } from 'framer-motion'
 import Image from 'next/future/image'
 import Icon from '../components/Icon'
@@ -33,7 +34,7 @@ export default function AppBar() {
 					border="3px solid"
 					borderColor="primary"
 				>
-					<Image alt="Аватар" src="/images/Avatar.jpeg" />
+					<Image alt="Аватар" src={avatarImg} placeholder="blur" />
 				</Box>
 				<Stack spacing={0}>
 					<Text fontSize="2xl" fontWeight="medium">

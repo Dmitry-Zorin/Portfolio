@@ -1,6 +1,6 @@
 import { Box, Heading, Stack, StackProps } from '@chakra-ui/react'
+import { Project } from 'data/projects'
 import Link from 'next/link'
-import { Project } from 'pages/projects'
 
 interface ProjectHeadingProps extends StackProps {
 	project: Project

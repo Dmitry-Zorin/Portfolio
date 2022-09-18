@@ -8,8 +8,8 @@ import {
 	Wrap,
 	WrapItem,
 } from '@chakra-ui/react'
+import { Project } from 'data/projects'
 import { motion } from 'framer-motion'
-import { Project } from 'pages/projects'
 import { gentleSpringConfig } from 'utils/animation'
 import ProjectHeading from './ProjectHeading'
 import ProjectImage from './ProjectImage'

@@ -1,13 +1,9 @@
 import { List } from '@chakra-ui/react'
+import { projects } from 'data/projects'
 import { motion } from 'framer-motion'
-import { Projects } from 'pages/projects'
 import ProjectItem from './ProjectItem'
 
-interface ProjectListProps {
-	projects: Projects
-}
-
-export default function ProjectList({ projects }: ProjectListProps) {
+export default function ProjectList() {
 	return (
 		<List
 			as={motion.ul}
