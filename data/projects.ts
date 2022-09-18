@@ -32,7 +32,8 @@ export const projects = [
 	{
 		title: 'Челленджи',
 		href: 'https://create-challenges.vercel.app',
-		description: 'Один из моих первых личных проектов с использованием React.',
+		description:
+			'Система, позволяющая создавать челленджи, ограниченные и неограниченные по времени, и следить за их выполнением.',
 		src: challengesImage,
 		year: 2020,
 		tags: [

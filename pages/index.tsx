@@ -6,11 +6,13 @@ export default function HomePage() {
 	return (
 		<>
 			<Head title="Портфолио" desc="Сайт портфолио Дмитрия Зорина" />
-			<HStack spacing={8} p={8}>
+			<HStack spacing={10} pt={16} justify="center">
 				<Avatar large />
-				<Stack spacing={4}>
+				<Stack>
 					<Heading>Зорин Дмитрий Олегович</Heading>
-					<Text>Фулстек разработчик</Text>
+					<Text fontSize="2xl" color="text-secondary">
+						Фулстек разработчик
+					</Text>
 				</Stack>
 			</HStack>
 		</>
