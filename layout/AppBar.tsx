@@ -1,41 +1,26 @@
-import { Box, HStack, Link, Stack, Text } from '@chakra-ui/react'
+import { HStack, Link, Stack, StackProps, Text } from '@chakra-ui/react'
 import {
 	faContactCard,
 	faEnvelope,
 	faPhone,
 } from '@fortawesome/free-solid-svg-icons'
-import avatarImg from 'assets/images/Avatar.jpeg'
-import { motion } from 'framer-motion'
-import Image from 'next/future/image'
-import Icon from '../components/Icon'
+import Icon from 'components/Icon'
+import Avatar from './Avatar'
 
-export default function AppBar() {
+export default function AppBar(props: StackProps) {
 	return (
 		<HStack
-			as={motion.div}
 			spacing={4}
-			// direction={{ base: 'column', md: 'row' }}
-			p={4}
+			py={4}
 			mb={4}
 			borderBottom="1px"
 			borderColor="border"
 			justify="space-between"
 			align="center"
-			animate={{ y: 0 }}
-			exit={{ y: '-100%', height: 0 }}
+			{...props}
 		>
 			<HStack spacing={4}>
-				<Box
-					as={motion.div}
-					layoutId="avatar"
-					borderRadius="full"
-					boxSize={16}
-					overflow="hidden"
-					border="3px solid"
-					borderColor="primary"
-				>
-					<Image alt="Аватар" src={avatarImg} placeholder="blur" />
-				</Box>
+				<Avatar />
 				<Stack spacing={0}>
 					<Text fontSize="2xl" fontWeight="medium">
 						Дмитрий Зорин

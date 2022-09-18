@@ -26,7 +26,7 @@ export default function ProjectImage({ project, ...props }: ProjectImageProps) {
 				transitionDuration="normal"
 				transitionTimingFunction="ease"
 				whileHover={{
-					scale: 1.0375,
+					scale: 1.025,
 					transition: gentleSpringConfig,
 				}}
 			>

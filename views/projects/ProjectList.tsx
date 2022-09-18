@@ -12,11 +12,11 @@ export default function ProjectList() {
 			variants={{
 				animate: {
 					transition: {
-						staggerChildren: 0.25,
+						staggerChildren: 0.3,
 					},
 				},
 			}}
-			spacing={8}
+			spacing={12}
 		>
 			{projects.map((project, i) => (
 				<ProjectItem

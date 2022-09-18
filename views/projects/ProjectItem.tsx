@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { Project } from 'data/projects'
 import { motion } from 'framer-motion'
-import { gentleSpringConfig } from 'utils/animation'
+import { slowerSpringConfig } from 'utils/animation'
 import ProjectHeading from './ProjectHeading'
 import ProjectImage from './ProjectImage'
 
@@ -27,10 +27,19 @@ export default function ProjectItem({
 }: ProjectItemProps) {
 	return (
 		<motion.li
-			variants={{ initial: { y: '25vh' }, animate: { y: 0 } }}
-			transition={gentleSpringConfig}
+			variants={{
+				initial: { y: '100%', opacity: 0 },
+				animate: { y: 0, opacity: 1 },
+			}}
+			transition={{
+				y: slowerSpringConfig,
+				opacity: {
+					type: 'anticipate',
+					duration: 0.75,
+				},
+			}}
 		>
-			<Stack spacing={8}>
+			<Stack spacing={12}>
 				<SimpleGrid as="article" columns={{ base: 1, lg: 2 }} spacing={8}>
 					<ProjectHeading display={{ lg: 'none' }} project={project} />
 					<Flex>
