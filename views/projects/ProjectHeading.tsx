@@ -11,7 +11,7 @@ export default function ProjectHeading({
 	...props
 }: ProjectHeadingProps) {
 	return (
-		<Stack {...props}>
+		<Stack as="header" {...props}>
 			<Box
 				color="primary"
 				fontSize="xl"

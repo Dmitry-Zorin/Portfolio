@@ -1,15 +1,15 @@
 import { Box, useBreakpointValue } from '@chakra-ui/react'
 import { Project } from 'data/projects'
 import { motion } from 'framer-motion'
-import Image, { ImageProps } from 'next/future/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import { gentleSpringConfig } from 'utils/animation'
 
-interface ProjectImageProps extends Partial<ImageProps> {
+interface ProjectImageProps {
 	project: Project
 }
 
-export default function ProjectImage({ project, ...props }: ProjectImageProps) {
+export default function ProjectImage({ project }: ProjectImageProps) {
 	const quality = useBreakpointValue({ base: 75, md: 100, lg: 75 })
 
 	return (
@@ -35,7 +35,6 @@ export default function ProjectImage({ project, ...props }: ProjectImageProps) {
 					src={project.src}
 					placeholder="blur"
 					quality={quality}
-					{...props}
 				/>
 			</Box>
 		</Link>

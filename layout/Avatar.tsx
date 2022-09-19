@@ -1,19 +1,17 @@
-import { Box, BoxProps } from '@chakra-ui/react'
 import avatarImg from 'assets/images/Avatar.jpeg'
-import { motion } from 'framer-motion'
-import Image, { ImageProps } from 'next/future/image'
-import { slowerSpringConfig } from 'utils/animation'
+import MotionBox from 'components/MotionBox'
+import Image from 'next/future/image'
+import { slowSpringConfig } from 'utils/animation'
 
-type AvatarProps = BoxProps &
-	Partial<ImageProps> & {
-		large?: boolean
-	}
+interface AvatarProps {
+	large?: boolean
+}
 
-export default function Avatar({ large, ...props }: AvatarProps) {
+export default function Avatar({ large }: AvatarProps) {
 	const imageProps = large
 		? {
 				boxSize: 64,
-				border: '6px solid',
+				border: '8px solid',
 				shadow: 'dark-lg',
 		  }
 		: {
@@ -22,24 +20,22 @@ export default function Avatar({ large, ...props }: AvatarProps) {
 		  }
 
 	return (
-		<motion.div
+		<MotionBox
 			layoutId="avatar"
-			style={{ zIndex: 1 }}
-			transition={slowerSpringConfig}
+			transition={slowSpringConfig}
+			{...imageProps}
+			borderColor="primary"
+			borderRadius="full"
+			overflow="hidden"
+			zIndex={1}
 		>
-			<Box
-				as={Image}
+			<Image
 				alt="Аватар"
 				src={avatarImg}
 				loading="eager"
 				placeholder="blur"
 				quality={100}
-				{...imageProps}
-				borderColor="primary"
-				borderRadius="full"
-				sx={{ height: 'auto' }}
-				{...props}
 			/>
-		</motion.div>
+		</MotionBox>
 	)
 }

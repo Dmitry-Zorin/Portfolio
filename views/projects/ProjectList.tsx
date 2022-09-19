@@ -7,6 +7,7 @@ export default function ProjectList() {
 	return (
 		<List
 			as={motion.ul}
+			spacing={10}
 			initial="initial"
 			animate="animate"
 			variants={{
@@ -16,7 +17,6 @@ export default function ProjectList() {
 					},
 				},
 			}}
-			spacing={10}
 		>
 			{projects.map((project, i) => (
 				<ProjectItem

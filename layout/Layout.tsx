@@ -1,23 +1,33 @@
-import { Container, ContainerProps, SimpleGrid } from '@chakra-ui/react'
-import PageHeading from 'components/PageHeading'
+import { Container, ContainerProps, Stack } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import AppBar from './AppBar'
+import Navbar from './Navbar'
+import Subnav from './Subnav'
 
-export default function Layout({ children, ...props }: ContainerProps) {
+export default function Layout({ children }: ContainerProps) {
 	const router = useRouter()
+	const isHomePage = router.pathname === '/'
 
 	return (
-		<Container as="main" maxW="8xl" px={{ base: 4, md: 8 }} pb={20} {...props}>
-			<header>
-				{router.route === '/' ? (
-					<SimpleGrid columns={{ base: 2, md: 4 }} py={8}>
-						<PageHeading page="projects" text="Проекты" link />
-					</SimpleGrid>
-				) : (
+		<Container
+			key={isHomePage ? 'home' : 'not home'}
+			as={Stack}
+			maxW="8xl"
+			minH="100vh"
+			px={{ base: 4, md: 8 }}
+			pb={20}
+		>
+			{isHomePage ? (
+				<Navbar />
+			) : (
+				<>
 					<AppBar />
-				)}
-			</header>
-			{children}
+					<Subnav />
+				</>
+			)}
+			<Stack as="main" spacing={8} flexGrow={1}>
+				{children}
+			</Stack>
 		</Container>
 	)
 }
