@@ -1,8 +1,9 @@
-import { useBreakpointValue } from '@chakra-ui/react'
-import { MotionLink } from 'components/motion'
+import { Box, useBreakpointValue } from '@chakra-ui/react'
 import { Project } from 'data/projects'
+import { motion } from 'framer-motion'
 import Image from 'next/future/image'
 import Link from 'next/link'
+import { useState } from 'react'
 import {
 	defaultSpringConfig,
 	gentleSpringConfig,
@@ -15,10 +16,12 @@ interface ProjectImageProps {
 
 export default function ProjectImage({ project }: ProjectImageProps) {
 	const quality = useBreakpointValue({ base: 75, md: 100, lg: 75 })
+	const [transition, setTransition] = useState(slowSpringConfig)
 
 	return (
 		<Link href={project.href} passHref>
-			<MotionLink
+			<Box
+				as={motion.a}
 				aria-label={project.title}
 				target="_blank"
 				borderRadius="xl"
@@ -28,9 +31,9 @@ export default function ProjectImage({ project }: ProjectImageProps) {
 				transitionDuration="normal"
 				transitionTimingFunction="ease"
 				_hover={{ shadow: 'xl' }}
-				transition={defaultSpringConfig}
 				initial={{ scale: 0 }}
-				animate={{ scale: 1, transition: slowSpringConfig }}
+				animate={{ scale: 1, transition }}
+				onAnimationComplete={() => setTransition(defaultSpringConfig)}
 				whileHover={{
 					scale: 1.025,
 					transition: gentleSpringConfig,
@@ -42,7 +45,7 @@ export default function ProjectImage({ project }: ProjectImageProps) {
 					placeholder="blur"
 					quality={quality}
 				/>
-			</MotionLink>
+			</Box>
 		</Link>
 	)
 }
