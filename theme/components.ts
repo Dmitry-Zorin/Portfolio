@@ -57,14 +57,14 @@ const components: ThemeComponents = {
 		},
 	},
 	Button: {
-		defaultProps: {
-			variant: 'ghost',
-		},
 		baseStyle: {
-			borderRadius: 'lg',
+			borderRadius: 'md',
+			textTransform: 'uppercase',
 		},
 		variants: {
 			solid: ({ colorScheme, ...props }) => ({
+				fontSize: 'sm',
+				fontWeight: 'medium',
 				color: 'bg',
 				bg: 'primary',
 				_hover: {

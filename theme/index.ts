@@ -31,6 +31,10 @@ const theme = extendTheme({
 			slower: '300ms',
 		},
 	},
+	shadows: {
+		'dark-lg':
+			'rgba(0, 0, 0, 0.2) 0px 5px 10px, rgba(0, 0, 0, 0.4) 0px 15px 40px',
+	},
 	styles: {
 		global: {
 			body: {

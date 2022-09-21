@@ -4,7 +4,7 @@ export const slowSpringConfig = {
 	damping: 14,
 }
 
-export const defaultSpringConfig = {
+export const moderateSpringConfig = {
 	type: 'spring' as const,
 	stiffness: 90,
 	damping: 14,
@@ -16,6 +16,13 @@ export const gentleSpringConfig = {
 	stiffness: 120,
 	damping: 14,
 	mass: 0.45,
+}
+
+export const defaultSpringConfig = {
+	type: 'spring' as const,
+	stiffness: 150,
+	damping: 14,
+	mass: 0.4,
 }
 
 export const stiffSpringConfig = {

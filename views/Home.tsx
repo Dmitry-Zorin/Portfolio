@@ -1,14 +1,11 @@
 import { Box, Heading, Stack, Text } from '@chakra-ui/react'
-import MotionBox from 'components/MotionBox'
+import { MotionStack } from 'components/motion'
+import { motion } from 'framer-motion'
 import Avatar from 'layout/Avatar'
-import { slowSpringConfig } from 'utils/animation'
 
 const variants = {
 	initial: { x: '100vw' },
-	animate: {
-		x: 0,
-		transition: slowSpringConfig,
-	},
+	animate: { x: 0 },
 }
 
 export default function Home() {
@@ -24,26 +21,23 @@ export default function Home() {
 				spacing={10}
 			>
 				<Avatar large />
-				<MotionBox
-					as={Stack}
+				<MotionStack
 					initial="initial"
 					animate="animate"
-					transition={{
-						staggerChildren: 0.3,
-					}}
+					transition={{ staggerChildren: 0.3 }}
 				>
-					<Heading as={MotionBox} variants={variants}>
+					<Heading as={motion.h1} variants={variants}>
 						Зорин Дмитрий Олегович
 					</Heading>
 					<Text
-						as={MotionBox}
+						as={motion.p}
 						variants={variants}
 						fontSize="2xl"
 						color="text-secondary"
 					>
 						Фулстек разработчик
 					</Text>
-				</MotionBox>
+				</MotionStack>
 			</Stack>
 			<Box flexGrow={2} />
 		</Stack>

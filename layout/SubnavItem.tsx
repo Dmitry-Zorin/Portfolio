@@ -13,7 +13,7 @@ export default function SubnavItem({ href, icon, text }: SubnavItemProps) {
 	return (
 		<ListItem>
 			<Link href={href} passHref>
-				<HStack as="a" py={6} _hover={{ color: 'primary' }}>
+				<HStack as="a" py={2} _hover={{ color: 'primary' }}>
 					<Icon icon={icon} />
 					<Text>{text}</Text>
 				</HStack>

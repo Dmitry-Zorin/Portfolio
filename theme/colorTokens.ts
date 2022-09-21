@@ -1,6 +1,6 @@
 const colorTokens = {
 	primary: {
-		default: `hsl(170 100% 25%)`,
+		default: `hsl(175 100% 25%)`,
 	},
 	text: {
 		default: 'hsl(210 25% 30%)',
@@ -9,16 +9,16 @@ const colorTokens = {
 		default: 'hsl(210 15% 40%)',
 	},
 	bg: {
-		default: 'hsl(0 0% 96%)',
+		default: 'hsl(235 25% 98%)',
 	},
 	'bg-layer-1': {
-		default: 'hsl(210 10% 93%)',
+		default: 'hsl(235 20% 95%)',
 	},
 	'bg-layer-2': {
-		default: 'hsl(210 10% 90%)',
+		default: 'hsl(235 20% 92%)',
 	},
 	border: {
-		default: 'hsl(210 10% 80%)',
+		default: 'hsl(235 10% 82%)',
 	},
 }
 

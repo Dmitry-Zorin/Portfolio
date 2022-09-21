@@ -12,6 +12,7 @@ export default function Layout({ children }: ContainerProps) {
 		<Container
 			key={isHomePage ? 'home' : 'not home'}
 			as={Stack}
+			spacing={4}
 			maxW="8xl"
 			minH="100vh"
 			px={{ base: 4, md: 8 }}

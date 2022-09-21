@@ -2,20 +2,29 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'assets/styles/Golos-Text.css'
-import useScrollRestoration from 'hooks/useScrollRestoration'
+import { MotionConfig } from 'framer-motion'
 import Layout from 'layout/Layout'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import theme from 'theme'
+import { slowSpringConfig } from 'utils/animation'
 
 config.autoAddCss = false
 
 function MyApp({ Component, pageProps }: AppProps) {
-	useScrollRestoration()
 	return (
 		<ChakraProvider theme={theme}>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			<Head>
+				<meta
+					name="viewport"
+					content="width=device-width, height=device-height, initial-scale=1"
+				></meta>
+			</Head>
+			<MotionConfig transition={slowSpringConfig}>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</MotionConfig>
 		</ChakraProvider>
 	)
 }
