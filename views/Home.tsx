@@ -14,7 +14,7 @@ export default function Home() {
 			<Box flexGrow={1} />
 			<Stack
 				as="article"
-				direction={{ base: 'column', md: 'row' }}
+				direction={{ base: 'column', lg: 'row' }}
 				justify="center"
 				align="center"
 				m="auto"
@@ -22,11 +22,14 @@ export default function Home() {
 			>
 				<Avatar large />
 				<MotionStack
+					maxW="2xl"
+					spacing={4}
+					textAlign={{ base: 'center', lg: 'left' }}
 					initial="initial"
 					animate="animate"
 					transition={{ staggerChildren: 0.3 }}
 				>
-					<Heading as={motion.h1} variants={variants}>
+					<Heading as={motion.h1} variants={variants} flexShrink={0}>
 						Зорин Дмитрий Олегович
 					</Heading>
 					<Text
@@ -35,7 +38,8 @@ export default function Home() {
 						fontSize="2xl"
 						color="text-secondary"
 					>
-						Фулстек разработчик
+						Frontend-разработчик, любящий делать удобные, красивые и быстро
+						работающие веб-сайты и веб-приложения.
 					</Text>
 				</MotionStack>
 			</Stack>
