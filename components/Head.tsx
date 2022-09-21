@@ -10,8 +10,8 @@ export interface HeadProps {
 export default function Head({ children, title, desc }: HeadProps) {
 	return (
 		<NextHead>
-			<title>{`${title} | Дмитрий Зорин`}</title>
-			<meta name="description" content={desc} />
+			<title>{title} | Дмитрий Зорин</title>
+			<meta name="description" content={desc ?? `${title} Дмитрия Зорина`} />
 			{children}
 		</NextHead>
 	)

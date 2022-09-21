@@ -5,7 +5,7 @@ import ProjectList from 'views/projects/ProjectList'
 export default function ProjectsPage() {
 	return (
 		<>
-			<Head title="Проекты" desc="Проекты Дмитрия Зорина" />
+			<Head title="Проекты" />
 			<PageHeading text="Проекты" />
 			<ProjectList />
 		</>

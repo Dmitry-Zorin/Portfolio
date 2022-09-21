@@ -4,7 +4,7 @@ import Home from 'views/Home'
 export default function HomePage() {
 	return (
 		<>
-			<Head title="Портфолио" desc="Сайт Дмитрия Зорина" />
+			<Head title="Портфолио" />
 			<Home />
 		</>
 	)
