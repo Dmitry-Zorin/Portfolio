@@ -19,7 +19,7 @@ export default function AppBar() {
 						Дмитрий Зорин
 					</Text>
 					<Text display={{ base: 'none', sm: 'block' }} color="text-secondary">
-						Frontend-разработчик
+						Fullstack-разработчик
 					</Text>
 				</Stack>
 			</HStack>

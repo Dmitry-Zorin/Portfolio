@@ -1,5 +1,5 @@
-import { Box } from '@chakra-ui/react'
-import avatarImg from 'assets/images/Avatar.jpg'
+import { Box, Center, Flex } from '@chakra-ui/react'
+import avatarImg from 'assets/images/Dmitry-Zorin.jpg'
 import { MotionBox } from 'components/motion'
 import Image from 'next/future/image'
 import { cloneElement } from 'react'
@@ -39,7 +39,7 @@ export default function Avatar({ large }: AvatarProps) {
 			maxW="full"
 			zIndex="overlay"
 		>
-			<Box
+			<Center
 				pos="absolute"
 				boxSize={64}
 				top={large ? 0 : -24}
@@ -48,30 +48,32 @@ export default function Avatar({ large }: AvatarProps) {
 				userSelect="none"
 				maxW={large ? 'full' : undefined}
 			>
-				<MotionBox
-					layoutId="avatar"
-					borderRadius="full"
-					overflow="hidden"
-					pos="relative"
-					h="auto"
-					shadow="dark-lg"
-					style={{ scale: large ? 1 : 0.25 }}
-					transition={{ ...slowSpringConfig, mass: 0.925 }}
-				>
-					{AvatarImage1}
-					<Box
-						pos="absolute"
-						top="2%"
-						left="2%"
-						w="96%"
-						h="96%"
+				<div>
+					<MotionBox
+						layoutId="avatar"
 						borderRadius="full"
 						overflow="hidden"
+						pos="relative"
+						h="auto"
+						shadow="dark-lg"
+						style={{ scale: large ? 1 : 0.25 }}
+						transition={{ ...slowSpringConfig, mass: 0.925 }}
 					>
-						{AvatarImage2}
-					</Box>
-				</MotionBox>
-			</Box>
+						{AvatarImage1}
+						<Box
+							pos="absolute"
+							top="2%"
+							left="2%"
+							w="96%"
+							h="96%"
+							borderRadius="full"
+							overflow="hidden"
+						>
+							{AvatarImage2}
+						</Box>
+					</MotionBox>
+				</div>
+			</Center>
 			<svg visibility="hidden" style={{ pointerEvents: 'none' }}>
 				<filter id="sharpBlur">
 					<feGaussianBlur stdDeviation="2" />

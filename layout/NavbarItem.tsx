@@ -1,23 +1,22 @@
 import { ListItem } from '@chakra-ui/react'
-import Link from 'components/Link'
+import Link, { LinkProps } from 'components/Link'
 import MotionText from '../components/MotionText'
 
-interface NavbarItemProps {
-	href: string
+interface NavbarItemProps extends LinkProps {
 	text: string
 }
 
-export default function NavbarItem({ href, text }: NavbarItemProps) {
+export default function NavbarItem({ text, ...props }: NavbarItemProps) {
 	return (
 		<ListItem py={4}>
 			<Link
-				href={href}
 				display="flex"
 				justifyContent="center"
 				fontSize="3xl"
 				fontWeight="semibold"
 				_hover={{ color: 'primary' }}
 				p={4}
+				{...props}
 			>
 				<MotionText text={text} />
 			</Link>

@@ -4,8 +4,8 @@ import PageHeading from 'layout/PageHeading'
 export default function FilesPage() {
 	return (
 		<>
-			<Head title="Файлы" />
-			<PageHeading text="Файлы" />
+			<Head title="Документы" />
+			<PageHeading text="Документы" />
 		</>
 	)
 }

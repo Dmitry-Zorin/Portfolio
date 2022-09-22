@@ -4,7 +4,7 @@ import {
 } from '@chakra-ui/react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 
-interface LinkProps extends Omit<ChakraLinkProps, 'href'> {
+export interface LinkProps extends Omit<ChakraLinkProps, 'href'> {
 	href: NextLinkProps['href']
 }
 

@@ -38,7 +38,7 @@ export default function Home() {
 						fontSize="2xl"
 						color="text-secondary"
 					>
-						Frontend-разработчик, любящий делать удобные, красивые и быстро
+						Fullstack-разработчик, любящий делать удобные, красивые и быстро
 						работающие веб-сайты и веб-приложения.
 					</Text>
 				</MotionStack>
