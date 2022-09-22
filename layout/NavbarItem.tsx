@@ -8,14 +8,12 @@ interface NavbarItemProps extends LinkProps {
 
 export default function NavbarItem({ text, ...props }: NavbarItemProps) {
 	return (
-		<ListItem py={4}>
+		<ListItem py={{ base: 1, sm: 4 }}>
 			<Link
 				display="flex"
 				justifyContent="center"
-				fontSize="3xl"
-				fontWeight="semibold"
 				_hover={{ color: 'primary' }}
-				p={4}
+				p={{ base: 1, sm: 4 }}
 				{...props}
 			>
 				<MotionText text={text} />

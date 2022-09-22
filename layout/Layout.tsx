@@ -21,10 +21,10 @@ export default function Layout({ children }: ContainerProps) {
 			{isHomePage ? (
 				<Navbar />
 			) : (
-				<>
+				<Stack spacing={4}>
 					<AppBar />
 					<Subnav />
-				</>
+				</Stack>
 			)}
 			<Stack as="main" spacing={8} flexGrow={1}>
 				{children}
