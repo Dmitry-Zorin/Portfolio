@@ -5,12 +5,13 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css'
 
 interface PDFViewerProps {
 	file: string
+	preview?: boolean
 }
 
-export default function PDFViewer({ file }: PDFViewerProps) {
-	const [numPages, setNumPages] = useState(0)
+export default function PDFViewer({ file, preview }: PDFViewerProps) {
+	const [numPages, setNumPages] = useState(1)
 	const [width, setWidth] = useState<number>()
-	const containerRef = useRef<HTMLDivElement>(null)
+	const containerRef = useRef<HTMLDivElement & HTMLAnchorElement>(null)
 
 	useEffect(() => {
 		function onResize() {
@@ -26,7 +27,30 @@ export default function PDFViewer({ file }: PDFViewerProps) {
 	}, [width])
 
 	return (
-		<Box ref={containerRef}>
+		<Box
+			ref={containerRef}
+			role="group"
+			{...(preview && {
+				as: 'a',
+				target: '_blank',
+				href: file,
+			})}
+			sx={{
+				canvas: {
+					borderRadius: 'xl',
+					bg: 'transparent',
+					shadow: 'md',
+					transitionProperty: 'box-shadow',
+					transitionDuration: 'normal',
+					transitionTimingFunction: 'ease',
+					_groupHover: {
+						...(preview && {
+							shadow: '2xl',
+						}),
+					},
+				},
+			}}
+		>
 			<Document
 				file={file}
 				externalLinkTarget="_blank"
@@ -47,7 +71,9 @@ export default function PDFViewer({ file }: PDFViewerProps) {
 						<Text>Загрузка PDF-файла...</Text>
 					</HStack>
 				}
-				onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+				onLoadSuccess={({ numPages }) => {
+					if (!preview) setNumPages(numPages)
+				}}
 			>
 				{Array.from(new Array(numPages), (_, index) => (
 					<Page key={index} pageNumber={index + 1} width={width} loading="" />

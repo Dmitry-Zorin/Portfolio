@@ -12,7 +12,7 @@ export default function Navbar() {
 			>
 				<NavbarItem href="/resume" text="Резюме" />
 				<NavbarItem href="/projects" text="Проекты" />
-				<NavbarItem href="/files" text="Документы" />
+				<NavbarItem href="/documents" text="Документы" />
 			</SimpleGrid>
 		</nav>
 	)
