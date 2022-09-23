@@ -16,15 +16,19 @@ export default function DocumentGrid() {
 				text='Письмо рекомендации компании "People Power Company"'
 			/>
 			<DocumentGridItem
-				file="/files/Hackathon-Diploma_Dmitry-Zorin.pdf"
+				file="/files/Hackathon-Winner-Diploma-2021_Dmitry-Zorin.pdf"
 				text='Диплом победителя Всероссийского конкурса "Цифровой прорыв"'
 			/>
 			<DocumentGridItem
-				file="/files/Technopolis-ERA-Gramota_Dmitry_Zorin.pdf"
-				text='Грамота технополиса "ЭРА"'
+				file="/files/Hackathon-Participant-Diploma-2021_Dmitry-Zorin.pdf"
+				text='Диплом участника финала Всероссийского конкурса "Цифровой прорыв"'
 			/>
 			<DocumentGridItem
-				file="/files/Certificate_Dmitry-Zorin.pdf"
+				file="/files/Technopolis-ERA-Gramota_Dmitry-Zorin.pdf"
+				text='Грамота выпускника технополиса "ЭРА"'
+			/>
+			<DocumentGridItem
+				file="/files/Competetion-Participant-2020-Certificate_Dmitry-Zorin.pdf"
 				text="Сертификат участника Всероссийских соревнований по кибербезопасности"
 			/>
 		</SimpleGrid>
