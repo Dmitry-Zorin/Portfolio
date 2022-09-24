@@ -1,7 +1,9 @@
 import { Box, HStack, Link, Spinner, Text } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5'
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css'
+import { defaultSpringConfig, gentleSpringConfig } from 'utils/animation'
 
 interface PDFViewerProps {
 	file: string
@@ -29,7 +31,6 @@ export default function PDFViewer({ file, preview }: PDFViewerProps) {
 	return (
 		<Box
 			ref={containerRef}
-			role="group"
 			{...(preview && {
 				as: 'a',
 				target: '_blank',
@@ -43,11 +44,13 @@ export default function PDFViewer({ file, preview }: PDFViewerProps) {
 					transitionProperty: 'box-shadow',
 					transitionDuration: 'normal',
 					transitionTimingFunction: 'ease',
-					_groupHover: {
-						...(preview && {
-							shadow: '2xl',
-						}),
-					},
+				},
+			}}
+			_hover={{
+				canvas: {
+					...(preview && {
+						shadow: '2xl',
+					}),
 				},
 			}}
 		>
@@ -75,9 +78,18 @@ export default function PDFViewer({ file, preview }: PDFViewerProps) {
 					if (!preview) setNumPages(numPages)
 				}}
 			>
-				{Array.from(new Array(numPages), (_, index) => (
-					<Page key={index} pageNumber={index + 1} width={width} loading="" />
-				))}
+				{preview ? (
+					<motion.div
+						whileHover={{ scale: 1.025, transition: gentleSpringConfig }}
+						transition={defaultSpringConfig}
+					>
+						<Page pageNumber={1} width={width} loading="" />
+					</motion.div>
+				) : (
+					Array.from({ length: numPages }, (_, index) => (
+						<Page key={index} pageNumber={index + 1} width={width} loading="" />
+					))
+				)}
 			</Document>
 		</Box>
 	)
