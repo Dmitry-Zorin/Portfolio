@@ -1,5 +1,6 @@
-import { Box, Center, Flex } from '@chakra-ui/react'
+import { Box, Center } from '@chakra-ui/react'
 import avatarImg from 'assets/images/Dmitry-Zorin.jpg'
+import Link from 'components/Link'
 import { MotionBox } from 'components/motion'
 import Image from 'next/future/image'
 import { cloneElement } from 'react'
@@ -33,6 +34,11 @@ export default function Avatar({ large }: AvatarProps) {
 
 	return (
 		<Box
+			as={large ? 'div' : Link}
+			{...(!large && {
+				href: '/',
+				'aria-label': 'На главную',
+			})}
 			pos="relative"
 			boxSize={large ? 64 : 16}
 			minW={16}

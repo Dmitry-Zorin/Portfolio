@@ -2,7 +2,6 @@ import { Container, ContainerProps, Stack } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import AppBar from './AppBar'
 import Navbar from './Navbar'
-import Subnav from './Subnav'
 
 export default function Layout({ children }: ContainerProps) {
 	const router = useRouter()
@@ -18,14 +17,7 @@ export default function Layout({ children }: ContainerProps) {
 			px={{ base: 4, md: 8 }}
 			pb={20}
 		>
-			{isHomePage ? (
-				<Navbar />
-			) : (
-				<Stack spacing={4}>
-					<AppBar />
-					<Subnav />
-				</Stack>
-			)}
+			{isHomePage ? <Navbar /> : <AppBar />}
 			<Stack as="main" spacing={8} flexGrow={1}>
 				{children}
 			</Stack>

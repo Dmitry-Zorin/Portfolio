@@ -1,4 +1,5 @@
 import { Heading } from '@chakra-ui/react'
+import Link from 'components/Link'
 import MotionText from 'components/MotionText'
 
 interface PageHeadingProps {
@@ -7,8 +8,10 @@ interface PageHeadingProps {
 
 export default function PageHeading({ text }: PageHeadingProps) {
 	return (
-		<Heading as="h1" fontSize="6xl">
-			<MotionText text={text} />
+		<Heading fontSize="6xl" py={1} mt={2}>
+			<Link href="/">
+				<MotionText text={text} />
+			</Link>
 		</Heading>
 	)
 }

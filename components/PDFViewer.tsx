@@ -38,9 +38,8 @@ export default function PDFViewer({ file, preview }: PDFViewerProps) {
 			})}
 			sx={{
 				canvas: {
-					borderRadius: 'xl',
-					bg: 'transparent',
 					shadow: 'md',
+					borderRadius: 'xl',
 					transitionProperty: 'box-shadow',
 					transitionDuration: 'normal',
 					transitionTimingFunction: 'ease',
@@ -80,8 +79,11 @@ export default function PDFViewer({ file, preview }: PDFViewerProps) {
 			>
 				{preview ? (
 					<motion.div
-						whileHover={{ scale: 1.025, transition: gentleSpringConfig }}
 						transition={defaultSpringConfig}
+						whileHover={{
+							scale: 1.025,
+							transition: gentleSpringConfig,
+						}}
 					>
 						<Page pageNumber={1} width={width} loading="" />
 					</motion.div>
