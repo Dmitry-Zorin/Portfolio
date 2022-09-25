@@ -28,7 +28,7 @@ export default function DocumentGrid() {
 				text='Грамота выпускника технополиса "ЭРА"'
 			/>
 			<DocumentGridItem
-				file="/files/Competetion-Participant-2020-Certificate_Dmitry-Zorin.pdf"
+				file="/files/Competition-Participant-2020-Certificate_Dmitry-Zorin.pdf"
 				text="Сертификат участника Всероссийских соревнований по кибербезопасности"
 			/>
 		</SimpleGrid>
