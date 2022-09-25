@@ -37,7 +37,7 @@ export default function Avatar({ large }: AvatarProps) {
 			as={large ? 'div' : Link}
 			{...(!large && {
 				href: '/',
-				'aria-label': 'На главную',
+				'aria-label': 'Перейти на главную',
 			})}
 			pos="relative"
 			boxSize={large ? 64 : 16}

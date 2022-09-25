@@ -13,19 +13,19 @@ export default function Socials() {
 				icon={faTelegram}
 				color="telegram.500"
 				href="https://t.me/dimazor"
-				text="@dimazor"
+				aria-label="Открыть профиль в Telegram"
 			/>
 			<SocialLink
 				icon={faLinkedin}
 				color="linkedin.700"
 				href="https://linkedin.com/in/dimazorin"
-				text="dimazorin"
+				aria-label="Открыть профиль в LinkedIn"
 			/>
 			<SocialLink
 				icon={faGithub}
 				color="#333"
 				href="https://github.com/Dmitry-Zorin"
-				text="Dmitry-Zorin"
+				aria-label="Открыть профиль в GitHub"
 			/>
 		</HStack>
 	)
