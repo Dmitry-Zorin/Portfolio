@@ -1,4 +1,6 @@
+const path = require('path')
 const headers = require('./headers')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
@@ -6,13 +8,26 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
+	headers,
 	swcMinify: true,
+	reactStrictMode: true,
 	i18n: {
 		locales: ['ru'],
 		defaultLocale: 'ru',
 	},
-	headers,
+	webpack: (config) => {
+		config.plugins.push(
+			new CopyPlugin({
+				patterns: [
+					{
+						from: require.resolve('pdfjs-dist/build/pdf.worker.min.js'),
+						to: path.join(__dirname, 'public'),
+					},
+				],
+			}),
+		)
+		return config
+	},
 }
 
 module.exports = withBundleAnalyzer(nextConfig)

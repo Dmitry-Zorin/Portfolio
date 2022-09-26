@@ -6,9 +6,9 @@ export default class Document extends NextDocument {
 			<Html>
 				<Head>
 					<link
+						as="font"
 						rel="preload"
 						href="/fonts/Golos-Text.woff2"
-						as="font"
 						type="font/woff2"
 						crossOrigin=""
 					/>

@@ -1,21 +1,23 @@
 import { Heading, Stack } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
-
-const PDFViewer = dynamic(import('components/PDFViewer'), { ssr: false })
+import PDFViewerDynamic from 'components/PDFViewerDynamic'
 
 interface DocumentGridItemProps {
 	text: string
-	file: string
+	filename: string
 }
 
 export default function DocumentGridItem({
 	text,
-	file,
+	filename,
 }: DocumentGridItemProps) {
 	return (
 		<Stack as="section" spacing={4}>
 			<Heading size="md">{text}</Heading>
-			<PDFViewer file={file} ariaLabel={`Открыть "${file}"`} preview />
+			<PDFViewerDynamic
+				filename={filename}
+				ariaLabel={`Открыть "${filename}"`}
+				preview
+			/>
 		</Stack>
 	)
 }

@@ -1,18 +1,20 @@
 import { Box, HStack, Link, Spinner, Text } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5'
+import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack5'
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css'
 import { defaultSpringConfig, gentleSpringConfig } from 'utils/animation'
 
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js'
+
 interface PDFViewerProps {
-	file: string
+	filename: string
 	preview?: boolean
 	ariaLabel?: string
 }
 
 export default function PDFViewer({
-	file,
+	filename,
 	preview,
 	ariaLabel,
 }: PDFViewerProps) {
@@ -33,14 +35,16 @@ export default function PDFViewer({
 		}
 	}, [width])
 
+	const fileUrl = `/files/${filename}`
+
 	return (
 		<Box
 			ref={containerRef}
 			{...(preview && {
 				as: 'a',
 				target: '_blank',
-				href: file,
-				'aria-label': ariaLabel || `Открыть файл ${file}`,
+				href: fileUrl,
+				'aria-label': ariaLabel || `Открыть файл "${filename}"`,
 			})}
 			sx={{
 				canvas: {
@@ -60,15 +64,15 @@ export default function PDFViewer({
 			}}
 		>
 			<Document
-				file={file}
+				file={fileUrl}
 				externalLinkTarget="_blank"
 				error={
 					<>
 						<Text color="red">Произошла ошибка при загрузке PDF-файла</Text>
 						<Text>
 							Ссылка на файл:{' '}
-							<Link href={file} target="_blank">
-								{file}
+							<Link href={fileUrl} target="_blank">
+								{filename}
 							</Link>
 						</Text>
 					</>

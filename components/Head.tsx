@@ -1,8 +1,8 @@
 import NextHead from 'next/head'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 
 export interface HeadProps {
-	children?: ReactElement[]
+	children?: ReactNode
 	title: string
 	desc?: string
 }

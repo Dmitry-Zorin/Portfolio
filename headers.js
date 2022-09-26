@@ -35,7 +35,7 @@ async function headers() {
 			],
 		},
 		{
-			source: '/:path*(ico|woff|woff2|pdf)',
+			source: '/:path*(ico|woff|woff2|pdf|js)',
 			headers: [
 				{
 					key: 'Cache-Control',

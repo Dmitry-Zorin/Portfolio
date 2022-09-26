@@ -8,27 +8,27 @@ export default function DocumentGrid() {
 			spacing={{ base: 4, md: 8 }}
 		>
 			<DocumentGridItem
-				file="/files/University-Diploma_Dmitry-Zorin.pdf"
+				filename="University-Diploma_Dmitry-Zorin.pdf"
 				text="Диплом Московского государственного университета имени М. В. Ломоносова"
 			/>
 			<DocumentGridItem
-				file="/files/Letter-of-Recommendation_Dmitry-Zorin.pdf"
+				filename="Letter-of-Recommendation_Dmitry-Zorin.pdf"
 				text='Письмо рекомендации компании "People Power Company"'
 			/>
 			<DocumentGridItem
-				file="/files/Hackathon-Winner-Diploma-2021_Dmitry-Zorin.pdf"
+				filename="Hackathon-Winner-Diploma-2021_Dmitry-Zorin.pdf"
 				text='Диплом победителя Всероссийского конкурса "Цифровой прорыв"'
 			/>
 			<DocumentGridItem
-				file="/files/Hackathon-Participant-Diploma-2021_Dmitry-Zorin.pdf"
+				filename="Hackathon-Participant-Diploma-2021_Dmitry-Zorin.pdf"
 				text='Диплом участника финала Всероссийского конкурса "Цифровой прорыв"'
 			/>
 			<DocumentGridItem
-				file="/files/Technopolis-ERA-Gramota_Dmitry-Zorin.pdf"
+				filename="Technopolis-ERA-Gramota_Dmitry-Zorin.pdf"
 				text='Грамота выпускника технополиса "ЭРА"'
 			/>
 			<DocumentGridItem
-				file="/files/Competition-Participant-2020-Certificate_Dmitry-Zorin.pdf"
+				filename="Competition-Participant-2020-Certificate_Dmitry-Zorin.pdf"
 				text="Сертификат участника Всероссийских соревнований по кибербезопасности"
 			/>
 		</SimpleGrid>
