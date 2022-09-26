@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<meta
 					name="viewport"
 					content="width=device-width, height=device-height, initial-scale=1"
-				></meta>
+				/>
 			</Head>
 			<MotionConfig transition={slowSpringConfig}>
 				<Layout>

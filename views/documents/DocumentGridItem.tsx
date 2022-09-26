@@ -15,7 +15,7 @@ export default function DocumentGridItem({
 	return (
 		<Stack as="section" spacing={4}>
 			<Heading size="md">{text}</Heading>
-			<PDFViewer file={file} preview />
+			<PDFViewer file={file} ariaLabel={`Открыть "${file}"`} preview />
 		</Stack>
 	)
 }

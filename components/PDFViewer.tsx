@@ -8,9 +8,14 @@ import { defaultSpringConfig, gentleSpringConfig } from 'utils/animation'
 interface PDFViewerProps {
 	file: string
 	preview?: boolean
+	ariaLabel?: string
 }
 
-export default function PDFViewer({ file, preview }: PDFViewerProps) {
+export default function PDFViewer({
+	file,
+	preview,
+	ariaLabel,
+}: PDFViewerProps) {
 	const [numPages, setNumPages] = useState(1)
 	const [width, setWidth] = useState<number>()
 	const containerRef = useRef<HTMLDivElement & HTMLAnchorElement>(null)
@@ -35,6 +40,7 @@ export default function PDFViewer({ file, preview }: PDFViewerProps) {
 				as: 'a',
 				target: '_blank',
 				href: file,
+				'aria-label': ariaLabel || `Открыть файл ${file}`,
 			})}
 			sx={{
 				canvas: {
