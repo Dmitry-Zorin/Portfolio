@@ -2,6 +2,7 @@ export const slowSpringConfig = {
 	type: 'spring' as const,
 	stiffness: 60,
 	damping: 14,
+	mass: 0.95,
 }
 
 export const moderateSpringConfig = {
